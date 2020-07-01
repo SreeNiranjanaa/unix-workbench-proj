@@ -5,10 +5,14 @@
 # 3) The number of lines in the code in guessinggame.sh
 
 README.md: guessinggame.sh
-	echo "# Title of the project : Guessing Game" >> README.md
-	echo "## The date and time at which make was run is" >> README.md
+	echo "## Unix-Workbench Assignment" >> README.md
+	echo "### Title of the project : \n" >> README.md
+	echo "Guessing Game" >> README.md
+	echo "### The date and time at which make was run : \n" >> README.md
 	date +%c >> README.md
-	echo "## The number of lines in the code is"  >> README.md
-	wc -l guessinggame.sh >> README.md
+	echo "### The number of lines in the code is"  >> README.md
+	wc -l < guessinggame.sh >> README.md
+
+	echo "-By Sree Niranjanaa Bose" >> README.md
 
 
