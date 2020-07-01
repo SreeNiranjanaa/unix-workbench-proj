@@ -13,6 +13,6 @@ README.md: guessinggame.sh
 	echo "### The number of lines in the code is"  >> README.md
 	wc -l < guessinggame.sh >> README.md
 
-	echo "-By Sree Niranjanaa Bose" >> README.md
+	echo "\n *Work done by - Sree Niranjanaa Bose*" >> README.md
 
 
