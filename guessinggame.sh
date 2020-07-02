@@ -2,9 +2,8 @@ function guess_dial {
 read x
 echo "You entered $x"
 }
-shopt -s nullglob
-numfiles=(*)
-numfiles=${#numfiles[@]}
+
+numfiles=$(ls -laR | egrep -c '^-')
 
 echo "Dear User, Guess the number of files in the directory:"
 while :
