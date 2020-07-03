@@ -14,5 +14,3 @@ README.md: guessinggame.sh
 	wc -l < guessinggame.sh >> README.md
 
 	echo "\n *Work done by - Sree Niranjanaa Bose*" >> README.md
-	echo "\n *Note : The number of files in the repository (including the hidden files) is:*" >> README.md
-	ls -laR /root/unix-workbench-proj | egrep -c '^-' >> README.md
