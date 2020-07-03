@@ -1,25 +1,33 @@
-function guess_dial {
-read x
-echo "You entered $x"
+function guess_dial {		
+	read input
 }
 
-numfiles=$(ls -laR | egrep -c '^-')
+numfiles=$(ls -la | grep ^- | wc -l)
 
 echo "Dear User, Guess the number of files in the directory:"
 while :
 do
 guess_dial
 echo "Checking......"
-if [[ $x -ne numfiles ]] && [[ $x -gt numfiles ]]
+
+# input santization
+if ! [[ "$input" =~ ^[0-9]+$ ]]
 then
-echo "Too high. Please try again"
-continue
-elif [[ $x -ne numfiles ]] && [[ $x -lt numfiles ]]
-then
-echo "Too low. Please try again"
-continue
+	echo "ERROR : You entered non-alphanumeric character"
+	echo "Please enter valid input"
 else
-echo "Congratulations !!! You were Right"
-break
+	echo "You entered $input"
+	if [[ $input -ne numfiles ]] && [[ $input -gt numfiles ]]
+	then
+		echo "Too high. Please try again"
+	continue
+	elif [[ $input -ne numfiles ]] && [[ $input -lt numfiles ]]
+	then
+		echo "Too low. Please try again"
+	continue
+	else
+		echo "Congratulations !!! You were Right"
+	break
+	fi
 fi
 done
